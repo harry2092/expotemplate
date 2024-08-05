@@ -21,7 +21,7 @@ module.exports = function (api) {
             "@utils": "./src/utils",
             "@src": "./src",
             "@styles": "./src/styles",
-            "@store": "./src/store",
+            "@store": "./src/redux",
           },
         },
       ],

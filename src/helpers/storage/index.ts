@@ -1,20 +1,7 @@
-
-/**
- * @author Ali Burhan Keskin <alikeskin@milvasoft.com>
- */
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { isObjectLike } from '@helpers/global';
-import { StoreEnum } from "./storeEnum";
 
-/**
- * Adds data to the storage with the specified key.
- * If the value is an object, it will be converted to a JSON string before storing.
- * 
- * @param key - The key to associate with the data.
- * @param value - The value to store.
- * @returns A Promise that resolves when the data is successfully stored, or rejects if there was an error.
- */
-export const addStoreDataAsync = async (key: StoreEnum, value: string): Promise<void> => {
+export const addStoreDataAsync = async (key: string, value: string): Promise<void> => {
 
   try {
 
@@ -38,7 +25,7 @@ export const addStoreDataAsync = async (key: StoreEnum, value: string): Promise<
  * @param key - The key to retrieve the data from AsyncStorage.
  * @returns A promise that resolves to the retrieved data, or an empty string if the data is not found or an error occurs.
  */
-export const getStoreDataAsync = async (key: StoreEnum):Promise<any> => {
+export const getStoreDataAsync = async (key: string):Promise<any> => {
 
   try {
 
@@ -63,7 +50,7 @@ export const getStoreDataAsync = async (key: StoreEnum):Promise<any> => {
  * @param key - The key used to retrieve the value from the storage.
  * @returns A promise that resolves to the retrieved string value, or an empty string if the value is not found or an error occurs.
  */
-export const getStoreStringAsync = async (key: StoreEnum):Promise<string> => {
+export const getStoreStringAsync = async (key: string):Promise<string> => {
 
   try {
 
@@ -89,7 +76,7 @@ export const getStoreStringAsync = async (key: StoreEnum):Promise<string> => {
  * @param key - The key of the data to be removed.
  * @returns A Promise that resolves when the data is successfully removed.
  */
-export const removeStoreDataAsync = async (key: StoreEnum):Promise<void> => {
+export const removeStoreDataAsync = async (key: string):Promise<void> => {
 
   try {
 

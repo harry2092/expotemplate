@@ -23,7 +23,9 @@ function AppLoadingProvider({ children }: Props) {
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded || fontError) {
-      await SplashScreen.hideAsync();
+      setTimeout(() => {
+         SplashScreen.hideAsync();
+      }, 3000);
     }
   }, [fontsLoaded, fontError]);
 

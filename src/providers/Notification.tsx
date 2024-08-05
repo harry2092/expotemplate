@@ -4,7 +4,8 @@ import * as Constants from "expo-constants";
 import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
 import { useDispatch } from "react-redux";
-import { SetExpoToken } from "@modules/app/redux/appSlice";
+import { SetExpoToken } from "../redux/reducers/appSlice";
+
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -55,7 +56,7 @@ async function registerForPushNotificationsAsync() {
       finalStatus = status;
     }
     if (finalStatus !== "granted") {
-      alert("Failed to get push token for push notification!");
+      console.log("Failed to get push token for push notification!");
       return;
     }
     // Learn more about projectId:
@@ -67,7 +68,7 @@ async function registerForPushNotificationsAsync() {
     ).data;
     console.log(token);
   } else {
-    alert("Must use physical device for Push Notifications");
+    console.log("Must use physical device for Push Notifications");
   }
 
   return token;

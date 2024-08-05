@@ -1,7 +1,6 @@
 import { StyleSheet } from "react-native";
-import type { ITheme } from "@styles/theme";
 
-export const styles = (theme: ITheme) =>
+export const styles = () =>
   StyleSheet.create({
     activityIndicator: {
       position: "absolute",
@@ -19,6 +18,5 @@ export const styles = (theme: ITheme) =>
       marginTop: 2,
       fontWeight: "bold",
       fontSize: 4,
-      color: theme.primary,
     },
   });
